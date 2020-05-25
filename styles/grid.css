@@ -1,64 +1,148 @@
-.container {
+.headercontainer {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 15vh);
-    gap: 5px;
-    grid-template-areas:
-        "header"
-        "hero"
-        "ad"
-        "body"
-        "sidebar"
-        "footer";
+    background-color: rgb(34, 107, 83);
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "hbrand hbrand"
+    "hnav htools";
+    margin-bottom: 0.5em;
 }
 
-@media (min-width: 576px) {
-    .container {
-        grid-template-columns: 1fr 0.5fr;
-        grid-template-rows: repeat(6, 15vh);
-        grid-template-areas:
-            "header header"
-            "hero ad"
-            "body ad"
-            "sidebar sidebar"
-            "footer footer";
+.hbrand{
+    grid-area: hbrand;
+    text-align: center;
+}
+
+.hnav{
+    grid-area: hnav;
+    text-align: left;
+}
+
+.htools{
+    grid-area: htools;
+    text-align: right;
+}
+
+@media (min-width:576px){
+    .headercontainer {
+        grid-template-columns: 35% 35% 30%;
+        grid-template-areas: 
+        "hbrand hnav htools";
+        margin-bottom: 0.5em;
     }
 }
 
-@media (min-width: 992px) {
-    .container {
-        grid-template-columns: 1fr 0.5fr;
-        grid-template-rows: repeat(6, 15vh);
-        grid-template-areas:
-            "header header"
-            "hero ad"
-            "body sidebar"
-            "footer footer";
+@media (min-width:992px){
+    .headercontainer {
+        grid-template-columns: 35% 35% 30%;
+        grid-template-areas: 
+        "hbrand hnav htools";
+        margin-bottom: 0.5em;
     }
 }
 
-.child {
-    background-color: paleturquoise;
+.herocontainer {
+    display: grid;
+    background-color: rgb(34, 107, 83);
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "herocall herocall";
+    margin-bottom: 0.5em;
+ }
+
+.herofeat{
+    grid-area: herofeat;
+    display: none;
+}
+
+.herocall{
+    grid-area: herocall;
+}
+
+@media (min-width:576px){
+    .herocontainer {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+        "herofeat herofeat"
+        "herocall herocall";
+        margin-bottom: 0.5em;
+    }
+
+    .herofeat {
+        display: block;
+    }
+}
+
+@media (min-width:992px){
+    .herocontainer {
+        grid-template-columns: 40% 40%;
+        grid-template-areas: 
+        "herofeat herofeat"
+        "herocall herocall";
+        margin-bottom: 0.5em;
+    }
+
+    .herofeat {
+        display: block;
+    }
+}
+
+.mainad {
+    display: none
+ }
+
+ .bodycontainer {
+    display: grid;
+    background-color: rgb(34, 107, 83);
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "bodyfeat"
+    "bodyad"
+    "bodylist";
+    margin-bottom: 0.5em;
+ }
+
+ .bodyfeat{
+    grid-area: bodyfeat;
+}
+
+.bodylist{
+    grid-area: bodylist;
+}
+
+.bodyad{
+    grid-area: bodyad;
 }
 
 
-.header {
-    grid-area: header;
-}
-
-.hero {
-    grid-area: hero;
-}
-.ad {
-    grid-area: ad;
-}
-.body {
-    grid-area: body;
+@media (min-width:576px){
+    .bodycontainer {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+        "bodyfeat bodyad"
+        "bodylist bodylist";
+        margin-bottom: 0.5em;
+    }
 }
 
 .sidebar {
-    grid-area: sidebar;
+    display: none;
+    background-color: rgb(34, 107, 83);
+    text-align: center;
+ }
+
+ @media (min-width:576px){
+    .sidebar {
+        display:block;
+        margin-bottom: 0.5em;
+    }
 }
+
 .footer {
-    grid-area: footer;
+    width: 100%;
+    background-color: rgb(34, 107, 83);
+    text-align: right;
 }
